@@ -7,8 +7,6 @@ import { Container } from "@/components/ui/container";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const STATS = [
   { value: "15+", label: "Years Experience" },
   { value: "2000+", label: "Students Guided" },
@@ -22,12 +20,15 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Register plugin client-side only (avoids SSR crash on Vercel)
+    gsap.registerPlugin(ScrollTrigger);
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     // Use gsap.context directly (synchronous) so it cleans up perfectly in React Strict Mode
     const ctx = gsap.context(() => {
       if (!containerRef.current) return;
-      const isTouch = window.matchMedia("(hover: none)").matches;
+      const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
       // Parallax — desktop only
       if (!isTouch && bgRef.current) {
