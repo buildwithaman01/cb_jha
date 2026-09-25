@@ -117,8 +117,8 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <div className="text-sm text-primary-foreground/60">
-            <p className="mb-2 md:mb-1" suppressHydrationWarning>
-              &copy; {new Date().getFullYear()} C.B. Jha Tutorials. All rights reserved. &nbsp;·&nbsp; MSME Registered
+            <p className="mb-2 md:mb-1">
+              &copy; 2025 C.B. Jha Tutorials. All rights reserved. &nbsp;·&nbsp; MSME Registered
             </p>
             <p className="text-xs text-primary-foreground/40">
               Built with <span className="text-red-500">❤️</span> by{' '}
