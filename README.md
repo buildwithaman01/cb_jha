@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# C.B. Jha Tutorials 🎓
 
-## Getting Started
+A premium educational platform for **C.B. Jha Tutorials**, an established coaching and educational institute based in Patna, Bihar. 
 
-First, run the development server:
+The website offers an elegant, fast, and fully responsive user experience for parents and students looking for home tuition, academic coaching, school staffing, and residential hostel facilities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Modern & Premium UI:** Designed using Tailwind CSS and Framer Motion for micro-interactions and scroll animations.
+- **FormSubmit Integration:** Serverless form handling across the site (Home Tuition, School Staffing, Hostel) with direct email delivery and a WhatsApp fallback mechanism.
+- **Fully Responsive:** Mobile-first design strategy ensuring a flawless experience on smartphones, tablets, and desktops.
+- **SEO Optimized:** Metadata, schema markup, and optimized assets.
+- **Fast Performance:** Built with Next.js 16 (App Router) and Turbopack for rapid development and optimized production builds.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** GSAP & Framer Motion
+- **Icons:** Lucide React
+- **Language:** TypeScript
+- **Forms:** FormSubmit.co
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
+Make sure you have Node.js (v18 or higher) installed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/buildwithaman01/cb_jha.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd cb_jha
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## 📝 Contact & Attribution
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Institute Address:** Dhanaut, Ward No. 03, Near Premlata Kunj Apartment, Mahuabag, Rupaspur, Patna, Bihar — 801506
+- **Phone:** +91 94708 08655
+- **Email:** contact.cbjha@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built with ❤️ by [Pehchanly Digital Solution](https://pehchanly.com)*

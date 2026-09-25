@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Inquiry {
+  id        String   @id @default(uuid())
+  name      String
+  email     String?
+  phone     String?
+  type      String   // "general", "coaching", "hostel"
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model HomeTuitionRequest {
+  id              String   @id @default(uuid())
+  parentName      String
+  studentName     String
+  phone           String
+  email           String?
+  studentClass    String
+  board           String
+  subjects        String   // JSON or comma separated
+  tutorGenderPref String?
+  timingPref      String
+  frequencyPref   String
+  locality        String
+  address         String
+  requirements    String?
+  createdAt       DateTime @default(now())
+}
+
+model TutorApplication {
+  id             String   @id @default(uuid())
+  name           String
+  phone          String
+  email          String
+  qualification  String
+  experience     Int
+  subjects       String
+  classes        String
+  boards         String
+  preferredMode  String
+  localities     String
+  availability   String
+  remuneration   String?
+  resumeUrl      String?
+  idProofUrl     String?
+  createdAt      DateTime @default(now())
+}
+
+model SchoolStaffingRequest {
+  id               String   @id @default(uuid())
+  schoolName       String
+  contactPerson    String
+  designation      String?
+  phone            String
+  email            String
+  address          String
+  staffingType     String
+  subjects         String
+  level            String
+  teacherCount     Int
+  duration         String
+  urgency          String
+  requirements     String?
+  createdAt        DateTime @default(now())
+}
+
+model TeacherApplication {
+  id                String   @id @default(uuid())
+  name              String
+  phone             String
+  email             String
+  qualification     String
+  hasBEd            Boolean
+  experience        Int
+  subjects          String
+  level             String
+  employmentPref    String
+  employmentStatus  String?
+  preferredLocation String
+  resumeUrl         String?
+  idProofUrl        String?
+  createdAt         DateTime @default(now())
+}
