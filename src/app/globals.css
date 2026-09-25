@@ -146,5 +146,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Smooth scroll with reduced motion respect */
-/* Smooth scroll managed exclusively by Lenis to prevent CSS conflicts */
+/* Native smooth scroll — respects user's reduced-motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
