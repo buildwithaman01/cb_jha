@@ -23,7 +23,14 @@ const NAV_LINKS = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  // Mark as mounted AFTER first render — ensures server HTML matches client HTML
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const isHome = pathname === "/";
 
   useEffect(() => {
@@ -42,15 +49,18 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  const headerBg = isHome
+  // Before hydration: render a stable, server-safe header (no scroll/path classes)
+  const headerBg = !mounted
+    ? "bg-transparent border-b border-transparent"
+    : isHome
     ? scrolled
       ? "bg-[#0A0E14]/95 backdrop-blur-md border-b border-white/8"
       : "bg-transparent border-b border-transparent"
     : "bg-background/95 backdrop-blur-md border-b border-border/40";
 
-  const logoColor = isHome && !scrolled ? "text-white" : "text-primary";
-  const linkColor = isHome && !scrolled ? "text-white/80 hover:text-white" : "text-foreground/80 hover:text-foreground";
-  const activeColor = isHome && !scrolled ? "text-accent" : "text-accent";
+  const logoColor = !mounted || (isHome && !scrolled) ? "text-white" : "text-primary";
+  const linkColor = !mounted || (isHome && !scrolled) ? "text-white/80 hover:text-white" : "text-foreground/80 hover:text-foreground";
+  const activeColor = "text-accent";
 
   return (
     <>
