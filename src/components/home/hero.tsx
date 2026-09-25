@@ -25,26 +25,8 @@ export function Hero() {
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Use gsap.context directly (synchronous) so it cleans up perfectly in React Strict Mode
     const ctx = gsap.context(() => {
-      if (!containerRef.current) return;
-      const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-
-      // Parallax — desktop only
-      if (!isTouch && bgRef.current) {
-        gsap.to(bgRef.current, {
-          yPercent: 20,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
-
-      // Staggered entrance
+      // Entrance animations only — no scrub/parallax that fights trackpad scroll
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.fromTo(".hero-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.1 })
         .fromTo(".hero-line-1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.1")
@@ -56,6 +38,7 @@ export function Hero() {
 
     return () => ctx.revert();
   }, []);
+
 
   return (
     <section

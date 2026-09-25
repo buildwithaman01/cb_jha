@@ -146,9 +146,4 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Native smooth scroll — respects user's reduced-motion preference */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
+/* Scroll is fully native — no overrides here */
