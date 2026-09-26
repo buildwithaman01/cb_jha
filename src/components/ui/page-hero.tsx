@@ -90,7 +90,7 @@ export function PageHero({
         }}
       />
 
-      <Container className="relative z-10 py-16 md:py-24">
+      <Container className="relative z-10 pt-24 pb-14 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
         {aside ? (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-7">
@@ -117,16 +117,16 @@ function HeroContent({
   return (
     <div className="max-w-3xl">
       {/* Eyebrow */}
-      <div className="flex items-center gap-3 mb-5">
+      <div className="flex items-center gap-3 mb-4 md:mb-5">
         <div className={cn("w-2 h-2 rounded-full shrink-0", v.dot)} />
         <div className={cn("h-px w-8 shrink-0", v.line)} />
-        <span className={cn("text-xs font-medium tracking-[0.22em] uppercase", v.eyebrow)}>
+        <span className={cn("text-xs font-semibold tracking-[0.22em] uppercase", v.eyebrow)}>
           {eyebrow}
         </span>
       </div>
 
       {/* Headline */}
-      <h1 className="font-heading font-bold leading-[1.1] tracking-tight mb-4 md:mb-5 text-[2rem] sm:text-[2.6rem] md:text-[3.4rem] lg:text-[4rem]">
+      <h1 className="font-heading font-bold leading-[1.12] tracking-tight mb-4 md:mb-5 text-[1.85rem] sm:text-[2.4rem] md:text-[3.2rem] lg:text-[3.8rem]">
         {headline}
         {highlight && (
           <>
@@ -138,19 +138,19 @@ function HeroContent({
 
       {/* Description */}
       {description && (
-        <p className="text-base md:text-lg leading-relaxed opacity-70 mb-6 max-w-2xl">
+        <p className="text-sm sm:text-base md:text-lg leading-relaxed opacity-75 mb-6 max-w-2xl">
           {description}
         </p>
       )}
 
       {/* Tags */}
       {tags && tags.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 pt-1">
           {tags.map((tag) => (
             <span
               key={tag}
               className={cn(
-                "px-3 py-1 border text-xs font-medium",
+                "px-3 py-1 border text-xs font-medium rounded-sm backdrop-blur-xs transition-colors",
                 v.tag
               )}
             >

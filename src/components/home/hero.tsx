@@ -75,31 +75,31 @@ export function Hero() {
 
       {/* ── Main content — vertically centered ── */}
       <div ref={contentRef} className="relative z-10 flex-1 flex flex-col justify-center">
-        <Container className="pt-32 pb-16 md:pt-40 md:pb-24">
+        <Container className="pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24">
           <div className="max-w-3xl">
 
             {/* Eyebrow */}
-            <div className="hero-eyebrow flex items-center gap-3 mb-6 md:mb-8">
+            <div className="hero-eyebrow flex items-center gap-3 mb-5 md:mb-8">
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-accent animate-pulse" />
-                <span className="text-accent/90 text-xs md:text-sm font-medium tracking-[0.2em] uppercase">
+                <span className="text-accent/90 text-[11px] sm:text-xs md:text-sm font-semibold tracking-[0.2em] uppercase">
                   Patna, Bihar · Est. 2009
                 </span>
               </div>
             </div>
 
             {/* Headline */}
-            <h1 className="font-heading font-bold text-white leading-[1.15] tracking-tight mb-6 md:mb-8">
-              <span className="hero-line-1 block text-5xl sm:text-6xl md:text-7xl lg:text-[5rem]">
+            <h1 className="font-heading font-bold text-white leading-[1.12] tracking-tight mb-5 md:mb-8">
+              <span className="hero-line-1 block text-[2.35rem] sm:text-5xl md:text-7xl lg:text-[5rem]">
                 Guiding Students
               </span>
-              <span className="hero-line-2 block text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-accent mt-2 md:mt-3">
+              <span className="hero-line-2 block text-[1.95rem] sm:text-4xl md:text-6xl lg:text-[4rem] text-accent mt-1.5 sm:mt-2 md:mt-3">
                 from Class 6 to 12 and Beyond.
               </span>
             </h1>
 
             {/* Services tag line */}
-            <p className="hero-sub text-base md:text-xl text-white/70 font-medium mb-10 md:mb-12 leading-relaxed tracking-wide">
+            <p className="hero-sub text-sm sm:text-base md:text-xl text-white/75 font-medium mb-8 sm:mb-10 md:mb-12 leading-relaxed tracking-wide">
               Academic Coaching &nbsp;·&nbsp; Home Tutors &nbsp;·&nbsp; Residential Care &nbsp;·&nbsp; School Staffing
             </p>
 

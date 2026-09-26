@@ -97,13 +97,13 @@ export default function FAQPage() {
       />
       <div className="bg-background min-h-screen pb-24">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-20 lg:py-28 relative">
+        <section className="bg-primary text-primary-foreground pt-24 pb-14 md:pt-28 md:pb-20 lg:py-28 relative">
           <Container className="relative z-10">
             <div className="max-w-3xl">
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="font-heading text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
                 Frequently Asked Questions
               </h1>
-              <p className="text-xl text-primary-foreground/80 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
                 Everything you need to know about our services, methodologies, and policies.
               </p>
             </div>

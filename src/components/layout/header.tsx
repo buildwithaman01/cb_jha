@@ -67,7 +67,7 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="relative flex items-center shrink-0 w-[240px] h-[55px] md:w-[320px] md:h-[72px]"
+              className="relative flex items-center shrink-0 w-[190px] h-[46px] sm:w-[230px] sm:h-[52px] md:w-[300px] md:h-[68px]"
               aria-label="C.B. Jha Tutorials Home"
             >
               <Image
@@ -75,7 +75,7 @@ export function Header() {
                 alt="C.B. Jha Tutorials"
                 fill
                 priority
-                sizes="(max-width: 768px) 240px, 320px"
+                sizes="(max-width: 640px) 190px, (max-width: 768px) 230px, 300px"
                 className={cn(
                   "object-contain object-left transition-all duration-300",
                   isHome && !scrolled ? "brightness-0 invert" : ""
@@ -128,26 +128,30 @@ export function Header() {
             </div>
 
             {/* Mobile — Phone icon + Hamburger */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1 lg:hidden">
               <a
                 href="tel:+919470808655"
                 aria-label="Call us"
                 className={cn(
-                  "flex items-center justify-center w-10 h-10 transition-colors",
-                  isHome && !scrolled ? "text-white/80" : "text-foreground/80"
+                  "flex items-center justify-center w-10 h-10 rounded-full transition-all active:scale-95 touch-manipulation",
+                  isHome && !scrolled
+                    ? "text-white/80 active:bg-white/10"
+                    : "text-foreground/80 active:bg-black/5"
                 )}
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-[18px] h-[18px]" />
               </a>
               <button
                 onClick={() => setIsOpen(true)}
                 aria-label="Open navigation menu"
                 className={cn(
-                  "flex items-center justify-center w-10 h-10 transition-colors",
-                  isHome && !scrolled ? "text-white" : "text-foreground"
+                  "flex items-center justify-center w-10 h-10 rounded-full transition-all active:scale-95 touch-manipulation",
+                  isHome && !scrolled
+                    ? "text-white active:bg-white/10"
+                    : "text-foreground active:bg-black/5"
                 )}
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -186,7 +190,7 @@ export function Header() {
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
-            className="flex items-center justify-center w-10 h-10 text-white/70 hover:text-white transition-colors"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-white/70 hover:text-white active:bg-white/10 active:scale-95 transition-all touch-manipulation"
           >
             <X className="w-6 h-6" />
           </button>
@@ -194,7 +198,7 @@ export function Header() {
 
         {/* Nav Links */}
         <nav
-          className="flex flex-col flex-1 px-6 py-8 overflow-y-auto"
+          className="flex flex-col flex-1 px-5 py-6 overflow-y-auto"
           aria-label="Mobile navigation"
         >
           {NAV_LINKS.map((link) => (
@@ -203,14 +207,14 @@ export function Header() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "flex items-center justify-between py-5 border-b border-white/6 font-heading text-2xl font-semibold transition-colors",
+                  "flex items-center justify-between py-4 px-3 rounded-sm border-b border-white/6 font-heading text-xl font-semibold transition-all active:bg-white/5 active:scale-[0.99] touch-manipulation",
                   pathname === link.href
                     ? "text-accent"
-                    : "text-white hover:text-accent"
+                    : "text-white/90 hover:text-accent"
                 )}
               >
                 {link.name}
-                <span className="text-white/20 text-lg">›</span>
+                <span className="text-white/30 text-base">›</span>
               </Link>
             </div>
           ))}

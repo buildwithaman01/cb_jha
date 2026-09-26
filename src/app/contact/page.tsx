@@ -62,7 +62,7 @@ export default function ContactPage() {
   return (
     <div className="bg-background min-h-screen pb-24">
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground py-20 lg:py-28 relative overflow-hidden">
+      <section className="bg-primary text-primary-foreground pt-24 pb-14 md:pt-28 md:pb-20 lg:py-28 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -71,10 +71,10 @@ export default function ContactPage() {
         <Container className="relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-10 bg-accent/60" />
-            <span className="text-accent text-xs font-medium tracking-[0.2em] uppercase">Get in Touch</span>
+            <span className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">Get in Touch</span>
           </div>
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-primary-foreground/70 leading-relaxed max-w-2xl">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl">
             Have a question about admissions, home tuition, or staffing? Our team responds within 24 hours.
           </p>
         </Container>
