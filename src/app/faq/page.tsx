@@ -1,6 +1,5 @@
 import { Container } from "@/components/ui/container";
 import type { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | C.B. Jha Tutorials",
@@ -90,10 +89,11 @@ export default function FAQPage() {
 
   return (
     <>
-      <Script
-        id="faq-schema"
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
       />
       <div className="bg-background min-h-screen pb-24">
         {/* Hero Section */}

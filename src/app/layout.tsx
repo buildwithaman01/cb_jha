@@ -87,13 +87,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
     >
-      <head>
+      <body className="min-h-full flex flex-col selection:bg-accent/30 selection:text-primary">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
         />
-      </head>
-      <body className="min-h-full flex flex-col selection:bg-accent/30 selection:text-primary">
         <SmoothScrollProvider>
           <Header />
           <main className="flex-1 pb-[58px] lg:pb-0">{children}</main>

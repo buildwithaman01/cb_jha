@@ -3,7 +3,6 @@ import { PageHero } from "@/components/ui/page-hero";
 import { CheckCircle2, GraduationCap, Users, BookOpen } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Academic Coaching Class 6–12 | C.B. Jha Tutorials Patna",
@@ -56,7 +55,12 @@ export default function AcademicCoachingPage() {
 
   return (
     <>
-      <Script id="course-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(courseSchema).replace(/</g, "\\u003c"),
+        }}
+      />
 
       <div className="bg-background min-h-screen pb-24">
         {/* Hero */}
