@@ -175,6 +175,43 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
+        {/* Digital Partner Section */}
+        <div className="mt-16 md:mt-20 bg-primary/[0.03] border border-accent/20 rounded-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-xl text-center md:text-left">
+            <span className="text-accent text-xs font-semibold tracking-[0.2em] uppercase block mb-2">
+              Technology &amp; Digital Partner
+            </span>
+            <h3 className="font-heading text-xl md:text-2xl font-bold text-primary mb-2">
+              Built with Pride by Pehchanly Digital Solution
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              This digital learning portal, web architecture, and search visibility are designed, engineered, and powered by{' '}
+              <a
+                href="https://pehchanly.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary font-semibold underline underline-offset-4 hover:text-accent transition-colors"
+              >
+                Pehchanly Digital Solution
+              </a>
+              .
+            </p>
+          </div>
+          <div className="shrink-0">
+            <a
+              href="https://pehchanly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-11 px-6 bg-primary text-primary-foreground font-heading font-semibold text-xs tracking-wider uppercase hover:bg-primary/90 transition-all rounded-xs shadow-xs"
+            >
+              Visit Pehchanly
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </Container>
     </div>
   );

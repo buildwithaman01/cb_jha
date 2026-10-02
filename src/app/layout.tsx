@@ -88,6 +88,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col selection:bg-accent/30 selection:text-primary">
+        {/* Google Analytics GA4 (Measurement ID: G-E9VN1P9QY4) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-E9VN1P9QY4"
+        />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-E9VN1P9QY4');
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
