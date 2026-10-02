@@ -99,9 +99,16 @@ export function Hero() {
             </h1>
 
             {/* Services tag line */}
-            <p className="hero-sub text-sm sm:text-base md:text-xl text-white/75 font-medium mb-8 sm:mb-10 md:mb-12 leading-relaxed tracking-wide">
+            <p className="hero-sub text-sm sm:text-base md:text-xl text-white/75 font-medium mb-5 leading-relaxed tracking-wide">
               Academic Coaching &nbsp;·&nbsp; Home Tutors &nbsp;·&nbsp; Residential Care &nbsp;·&nbsp; School Staffing
             </p>
+
+            {/* Bold Facility Highlight */}
+            <div className="hero-sub inline-block mb-8 sm:mb-10 p-3.5 sm:p-4 rounded border border-accent/40 bg-accent/10 backdrop-blur-sm">
+              <p className="font-heading font-bold text-white text-sm sm:text-base md:text-lg leading-snug">
+                &ldquo;Provided the facility of online &amp; offline tuition by the well qualified eminent teachers.&rdquo;
+              </p>
+            </div>
 
             {/* CTAs */}
             <div className="hero-cta flex flex-col sm:flex-row items-stretch sm:items-center gap-4">

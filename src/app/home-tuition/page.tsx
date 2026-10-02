@@ -331,7 +331,16 @@ export default function HomeTuitionPage() {
         variant="light"
       />
 
-      <Container className="mt-16 lg:mt-24">
+      {/* Prominent Bold Facility Statement */}
+      <Container className="mt-8">
+        <div className="p-4 sm:p-5 bg-accent/10 border-l-4 border-accent rounded-r shadow-sm">
+          <p className="font-heading font-bold text-primary text-base sm:text-lg md:text-xl leading-snug">
+            &ldquo;Provided the facility of online &amp; offline tuition by the well qualified eminent teachers.&rdquo;
+          </p>
+        </div>
+      </Container>
+
+      <Container className="mt-12 lg:mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
           {/* Left — Content */}

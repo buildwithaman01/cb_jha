@@ -73,6 +73,15 @@ export default function AcademicCoachingPage() {
           variant="navy"
         />
 
+        {/* Bold Facility Statement Banner */}
+        <div className="bg-[#1C2025] py-4 border-b border-accent/20">
+          <Container>
+            <p className="font-heading font-bold text-accent text-center text-sm sm:text-base md:text-lg tracking-wide">
+              &ldquo;Provided the facility of online &amp; offline tuition by the well qualified eminent teachers.&rdquo;
+            </p>
+          </Container>
+        </div>
+
         {/* Batch Timings */}
         <section className="bg-[#22262B] py-12 border-y border-accent/10">
           <Container>
