@@ -10,18 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/admin/', '/api/'],
       },
-      {
-        userAgent: [
-          'GPTBot',
-          'ChatGPT-User',
-          'ClaudeBot',
-          'PerplexityBot',
-          'Google-Extended',
-          'Applebot-Extended',
-        ],
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
-      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };
