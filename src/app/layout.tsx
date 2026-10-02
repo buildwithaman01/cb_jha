@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cbjhatutorials.in"),
+  metadataBase: new URL("https://www.cbjhatutorials.in"),
   title: "C.B. Jha Tutorials | Academic Coaching & Home Tutors in Patna",
   description: "Guiding Students from Class 6 to 12 — At Home, In Coaching, and Beyond.",
   icons: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "C.B. Jha Tutorials",
     description: "Guiding Students from Class 6 to 12 — At Home, In Coaching, and Beyond.",
-    url: "https://cbjhatutorials.in",
+    url: "https://www.cbjhatutorials.in",
     siteName: "C.B. Jha Tutorials",
     locale: "en_IN",
     type: "website",
@@ -43,10 +43,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@graph": [
       {
         "@type": "EducationalOrganization",
-        "@id": "https://cbjhatutorials.in/#organization",
+        "@id": "https://www.cbjhatutorials.in/#organization",
         "name": "C.B. Jha Tutorials",
-        "url": "https://cbjhatutorials.in",
-        "logo": "https://cbjhatutorials.in/images/logo.png",
+        "url": "https://www.cbjhatutorials.in",
+        "logo": "https://www.cbjhatutorials.in/images/logo.png",
         "email": "contact.cbjha@gmail.com",
         "telephone": "+919470808655",
         "sameAs": [
@@ -56,9 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://cbjhatutorials.in/#localbusiness",
+        "@id": "https://www.cbjhatutorials.in/#localbusiness",
         "name": "C.B. Jha Tutorials",
-        "url": "https://cbjhatutorials.in",
+        "url": "https://www.cbjhatutorials.in",
         "telephone": "+919470808655",
         "email": "contact.cbjha@gmail.com",
         "foundingDate": "2009",

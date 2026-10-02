@@ -48,7 +48,7 @@ export default function AcademicCoachingPage() {
     "provider": {
       "@type": "EducationalOrganization",
       "name": "C.B. Jha Tutorials",
-      "sameAs": "https://cbjhatutorials.in",
+      "sameAs": "https://www.cbjhatutorials.in",
     },
     "educationalLevel": "Class 6 to Class 12",
   };
