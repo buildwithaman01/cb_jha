@@ -2,6 +2,63 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 
+const SOCIAL_LINKS = [
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@CBJhaTutorial",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/cbjhatutorials/",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/cbjhatutorials/",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Sulekha",
+    href: "https://www.sulekha.com/c-b-jha-tutorials-dhanaut-patna-contact-address",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "JustDial",
+    href: "https://jsdl.in/DT-47BCEWISM6T",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "UrbanPro",
+    href: "https://www.urbanpro.com/patna/c-b-jha-tutorials/67509575",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3zm0 2.69L19 12v7h-4v-5H9v5H5v-7l7-6.31z"/>
+      </svg>
+    ),
+  },
+];
+
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground border-t border-primary/20 pt-16 pb-8">
@@ -18,7 +75,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-primary-foreground/80 max-w-xs leading-relaxed mb-4">
-              Guiding Students from Class 6 to 12 — At Home, In Coaching, and Beyond. Founded by Chandra Bhushan Jha.
+              Trusted coaching (Class 6–10) & home tuition (Nursery–12) across all of Patna. Founded by Chandra Bhushan Jha.
             </p>
             {/* MSME Badge */}
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-accent/30 text-accent text-[10px] font-medium tracking-wide uppercase">
@@ -27,6 +84,21 @@ export function Footer() {
               </svg>
               MSME Registered
             </span>
+            {/* Social Links */}
+            <div className="flex items-center gap-3 mt-5">
+              {SOCIAL_LINKS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-8 h-8 flex items-center justify-center border border-primary-foreground/20 text-primary-foreground/60 hover:text-accent hover:border-accent/50 transition-colors"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
@@ -61,6 +133,16 @@ export function Footer() {
               <li>
                 <Link href="/about" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/success-stories" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                  Success Stories &amp; Results
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                  Blog &amp; Insights
                 </Link>
               </li>
               <li>
@@ -100,7 +182,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://maps.app.goo.gl/DjKVL4ccrKGACSgC6"
+                  href="https://maps.app.goo.gl/Urx124MDJuwNfw3L9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-accent hover:underline text-xs font-medium"
@@ -118,7 +200,7 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <div className="text-sm text-primary-foreground/60">
             <p className="mb-2 md:mb-1">
-              &copy; 2025 C.B. Jha Tutorials. All rights reserved. &nbsp;·&nbsp; MSME Registered
+              &copy; 2026 C.B. Jha Tutorials. All rights reserved. &nbsp;·&nbsp; MSME Registered
             </p>
             <p className="text-xs text-primary-foreground/40">
               Built with <span className="text-red-500">❤️</span> by{' '}

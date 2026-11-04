@@ -44,10 +44,10 @@ function StudentForm() {
     e.preventDefault();
     const form = e.currentTarget.closest("form");
     if (!form) return;
-    
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
+
     let text = `*New Student Inquiry (Home Tuition)*\n\n`;
     text += `*Parent:* ${data.parentName}\n`;
     text += `*Student:* ${data.studentName}\n`;
@@ -103,7 +103,9 @@ function StudentForm() {
           <label className="block text-sm font-medium text-foreground mb-1.5">Student&apos;s Class *</label>
           <select name="studentClass" required className="w-full h-11 px-4 border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent transition-all">
             <option value="">Select class</option>
-            {[6,7,8,9,10,11,12].map(c => <option key={c} value={c}>Class {c}</option>)}
+            {["Nursery", "LKG / UKG", "Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9", "Class 10", "Class 11 (Science)", "Class 11 (Commerce)", "Class 11 (Arts)", "Class 12 (Science)", "Class 12 (Commerce)", "Class 12 (Arts)"].map(c => (
+              <option key={c} value={c}>{c}</option>
+            ))}
           </select>
         </div>
         <div>
@@ -126,11 +128,10 @@ function StudentForm() {
               key={s}
               type="button"
               onClick={() => toggleSubject(s)}
-              className={`px-3 py-1.5 text-xs font-medium border transition-all ${
-                selectedSubjects.includes(s)
+              className={`px-3 py-1.5 text-xs font-medium border transition-all ${selectedSubjects.includes(s)
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-transparent text-foreground border-border hover:border-primary"
-              }`}
+                }`}
             >
               {s}
             </button>
@@ -210,10 +211,10 @@ function TutorForm() {
     e.preventDefault();
     const form = e.currentTarget.closest("form");
     if (!form) return;
-    
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
+
     let text = `*New Tutor Application (Home Tuition)*\n\n`;
     text += `*Name:* ${data.name}\n`;
     text += `*Phone:* ${data.phone}\n`;
@@ -307,7 +308,7 @@ function TutorForm() {
         </button>
         <button type="button" onClick={handleWhatsApp} className="flex-1 h-12 bg-[#25D366] text-white font-heading font-semibold text-sm hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-2">
           <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0z"/>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0z" />
           </svg>
           Send via WhatsApp
         </button>
@@ -323,11 +324,11 @@ export default function HomeTuitionPage() {
     <div className="bg-background min-h-screen pb-24">
       {/* Hero */}
       <PageHero
-        eyebrow="Home Tuition"
-        headline="Expert Tutors,"
+        eyebrow="Home Tuition &amp; Online Classes"
+        headline="Expert Home &amp; Online Tutors,"
         highlight="At Your Doorstep."
-        description="Background-verified home tutors for Class 6–12, across all subjects. Matched to your child's board, level, and learning pace."
-        tags={["CBSE", "ICSE", "Bihar State Board", "Class 6–12", "All Subjects", "Free Demo Class"]}
+        description="Background-verified tutors for Nursery to Class 12, across all subjects. Matched to your child's board, level, and learning pace across all localities in Patna."
+        tags={["CBSE", "ICSE", "Bihar State Board", "Nursery to Class 12", "All Patna Localities", "Free Demo Class"]}
         variant="light"
       />
 
@@ -386,8 +387,8 @@ export default function HomeTuitionPage() {
             </div>
 
             {/* Subjects & Boards */}
-            <div className="p-8 bg-primary text-primary-foreground">
-              <h3 className="font-heading text-lg font-bold mb-4">Subjects & Boards We Cover</h3>
+            <div className="p-8 bg-primary text-primary-foreground mb-16">
+              <h3 className="font-heading text-lg font-bold mb-4">Subjects &amp; Boards We Cover</h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="font-semibold text-accent mb-2 text-xs uppercase tracking-wider">Subjects</p>
@@ -397,8 +398,182 @@ export default function HomeTuitionPage() {
                   <p className="font-semibold text-accent mb-2 text-xs uppercase tracking-wider">Boards</p>
                   <p className="text-primary-foreground/70 leading-relaxed mb-4">CBSE, ICSE, Bihar State Board</p>
                   <p className="font-semibold text-accent mb-2 text-xs uppercase tracking-wider">Classes</p>
-                  <p className="text-primary-foreground/70">Class 6 through 12</p>
+                  <p className="text-primary-foreground/70">Nursery through Class 12</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Class-by-Class Guidance Breakdown */}
+            <div className="mb-16">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-px w-8 bg-accent" />
+                <span className="text-accent text-xs font-semibold tracking-widest uppercase">Structured Learning</span>
+              </div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-6">
+                Tailored Home Tuition for Every Stage
+              </h2>
+              
+              <div className="space-y-6">
+                {/* Stage 1 */}
+                <div className="p-6 bg-white border border-border hover:border-accent/40 transition-colors">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="px-2.5 py-0.5 bg-accent/15 text-accent font-heading font-bold text-xs uppercase tracking-wider">
+                      Early Years
+                    </span>
+                    <h3 className="font-heading font-bold text-lg text-foreground">
+                      Primary Foundation (Nursery to Class 5)
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Early education shapes a child&apos;s relationship with learning. Our patient, motherly female and male tutors focus on phonetic reading, clear English/Hindi handwriting, early mental arithmetic, and cultivating curiosity without pressure or rote stress.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs text-foreground/80 font-medium">
+                    <span className="bg-muted px-2.5 py-1">Phonics &amp; Reading</span>
+                    <span className="bg-muted px-2.5 py-1">Mental Arithmetic</span>
+                    <span className="bg-muted px-2.5 py-1">Homework Assistance</span>
+                    <span className="bg-muted px-2.5 py-1">Handwriting Improvement</span>
+                  </div>
+                </div>
+
+                {/* Stage 2 */}
+                <div className="p-6 bg-white border border-border hover:border-accent/40 transition-colors">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="px-2.5 py-0.5 bg-primary/10 text-primary font-heading font-bold text-xs uppercase tracking-wider">
+                      Transition
+                    </span>
+                    <h3 className="font-heading font-bold text-lg text-foreground">
+                      Middle School Mentorship (Class 6 to 8)
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Classes 6 to 8 mark the leap from general awareness to formal subject specialization. We strengthen algebra, geometry, science foundations (Physics, Chemistry, Biology), and grammar to ensure zero conceptual gaps before the high school phase.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs text-foreground/80 font-medium">
+                    <span className="bg-muted px-2.5 py-1">Mathematics Foundation</span>
+                    <span className="bg-muted px-2.5 py-1">General Science</span>
+                    <span className="bg-muted px-2.5 py-1">Social Studies &amp; Maps</span>
+                    <span className="bg-muted px-2.5 py-1">English Grammar</span>
+                  </div>
+                </div>
+
+                {/* Stage 3 */}
+                <div className="p-6 bg-white border border-border hover:border-accent/40 transition-colors">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="px-2.5 py-0.5 bg-secondary/15 text-secondary font-heading font-bold text-xs uppercase tracking-wider">
+                      Board Focus
+                    </span>
+                    <h3 className="font-heading font-bold text-lg text-foreground">
+                      High School Board Excellence (Class 9 &amp; 10)
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Board exam performance defines future career paths. Our experienced subject specialists deliver rigorous line-by-line NCERT/ICSE textbook mastery, weekly timed chapter tests, past 10 years question bank solving, and personalized board answer-writing drills.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs text-foreground/80 font-medium">
+                    <span className="bg-muted px-2.5 py-1">CBSE, ICSE &amp; Bihar Board</span>
+                    <span className="bg-muted px-2.5 py-1">Intensive Maths &amp; Science</span>
+                    <span className="bg-muted px-2.5 py-1">Sample Papers &amp; Pre-boards</span>
+                    <span className="bg-muted px-2.5 py-1">Formula &amp; Derivation Sheets</span>
+                  </div>
+                </div>
+
+                {/* Stage 4 */}
+                <div className="p-6 bg-white border border-border hover:border-accent/40 transition-colors">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="px-2.5 py-0.5 bg-accent/15 text-accent font-heading font-bold text-xs uppercase tracking-wider">
+                      Specialized
+                    </span>
+                    <h3 className="font-heading font-bold text-lg text-foreground">
+                      Senior Secondary Streams (Class 11 &amp; 12)
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Senior secondary requires subject-expert educators who understand board marking schemes alongside competitive entrance patterns. We assign postgraduate tutors for:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-foreground/80">
+                    <div className="p-3 bg-muted/40 border border-border">
+                      <strong className="block text-primary font-bold mb-1">Science Stream</strong>
+                      <span>Physics (guided by founder Chandra Bhushan Jha), Chemistry, Mathematics &amp; Biology.</span>
+                    </div>
+                    <div className="p-3 bg-muted/40 border border-border">
+                      <strong className="block text-primary font-bold mb-1">Commerce &amp; Arts</strong>
+                      <span>Accountancy, Economics, Business Studies, Political Science &amp; History.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Board Specialization Comparison */}
+            <div className="mb-16">
+              <h2 className="font-heading text-2xl font-bold text-primary mb-6">
+                Board-Specific Pedagogical Approach
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="p-5 bg-card border border-border">
+                  <h3 className="font-heading font-bold text-base text-primary mb-2">CBSE Board</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Centred on NCERT line-by-line clarity, competency-based questions, case-study questions, and rigorous exemplar problem practice.
+                  </p>
+                </div>
+                <div className="p-5 bg-card border border-border">
+                  <h3 className="font-heading font-bold text-base text-primary mb-2">ICSE / ISC Board</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Emphasis on detailed analytical explanations, expressive English literature answers, practical applications, and Selina/Morning Star curricula.
+                  </p>
+                </div>
+                <div className="p-5 bg-card border border-border">
+                  <h3 className="font-heading font-bold text-base text-primary mb-2">Bihar Board (BSEB)</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Targeted practice on high-weightage objective questions, Hindi/English medium precision, SCERT/NCERT coverage, and official model test papers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Online Tuition Facility */}
+            <div className="mb-16 p-7 bg-[#22262B] text-white relative overflow-hidden">
+              <div className="relative z-10">
+                <span className="text-accent text-xs font-semibold tracking-widest uppercase block mb-2">
+                  Flexible Delivery Mode
+                </span>
+                <h3 className="font-heading text-2xl font-bold mb-3 text-white">
+                  Live 1-on-1 Online Tuition in Patna
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed mb-5">
+                  Unable to host a tutor at home or prefer digital convenience? Our online tutoring matches your child with top educators via live interactive video, digital stylus whiteboards, recorded revision sessions, and real-time doubt clearing.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-white/90">
+                  <div className="p-2.5 bg-white/5 border border-white/10 text-center">Live 1-on-1 Audio &amp; Video</div>
+                  <div className="p-2.5 bg-white/5 border border-white/10 text-center">Interactive Digital Whiteboard</div>
+                  <div className="p-2.5 bg-white/5 border border-white/10 text-center">Recorded Revision Sessions</div>
+                  <div className="p-2.5 bg-white/5 border border-white/10 text-center">Weekly Online Test Series</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tutor Screening Verification Guarantee */}
+            <div className="mb-16">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-px w-8 bg-accent" />
+                <span className="text-accent text-xs font-semibold tracking-widest uppercase">Safety &amp; Reliability</span>
+              </div>
+              <h2 className="font-heading text-2xl font-bold text-primary mb-6">
+                Our 4-Stage Tutor Verification Guarantee
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { step: "01", title: "Government Identity Check", desc: "Aadhaar card, permanent address proof, and police verification check for absolute safety inside your home." },
+                  { step: "02", title: "Original Degree Verification", desc: "Inspection of genuine graduation, post-graduation (M.Sc/M.A.), and B.Ed degree certificates." },
+                  { step: "03", title: "Subject Competency Exam", desc: "Written test and mock demo lesson evaluating syllabus mastery and clarity of explanation." },
+                  { step: "04", title: "Founder Personal Interview", desc: "Final clearance by Chandra Bhushan Jha Sir to assess teaching passion, moral integrity, and patience." },
+                ].map((s) => (
+                  <div key={s.step} className="p-5 border border-border bg-card">
+                    <span className="font-heading text-2xl font-bold text-accent mb-1 block">{s.step}</span>
+                    <h4 className="font-heading font-bold text-sm text-foreground mb-1">{s.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -437,7 +612,7 @@ export default function HomeTuitionPage() {
                         className="flex items-center justify-center gap-2 mt-2 h-10 border border-green-300 bg-green-50 text-green-700 text-sm font-medium hover:bg-green-100 transition-colors"
                       >
                         <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0zm0 21.818a9.84 9.84 0 01-5.018-1.374l-.36-.214-3.728.978.994-3.632-.235-.372A9.797 9.797 0 012.182 12.025c0-5.405 4.398-9.843 9.843-9.843 5.405 0 9.793 4.398 9.793 9.843s-4.428 9.793-9.843 9.793z"/>
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0zm0 21.818a9.84 9.84 0 01-5.018-1.374l-.36-.214-3.728.978.994-3.632-.235-.372A9.797 9.797 0 012.182 12.025c0-5.405 4.398-9.843 9.843-9.843 5.405 0 9.793 4.398 9.793 9.843s-4.428 9.793-9.843 9.793z" />
                         </svg>
                         WhatsApp Us
                       </a>

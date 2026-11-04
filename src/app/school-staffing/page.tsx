@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Container } from "@/components/ui/container";
 import { CheckCircle, Clock, FileCheck, Users, Award } from "lucide-react";
+import { trackFormSubmission } from "@/lib/analytics";
 
 const SUBJECTS = ["Mathematics", "Physics", "Chemistry", "Biology", "English", "Hindi", "Social Science", "Sanskrit", "Computer Science", "Accountancy", "Economics", "Business Studies", "History", "Geography", "Political Science"];
 
@@ -22,7 +23,10 @@ function SchoolRequestForm() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ _subject: "New School Staffing Request", ...data }),
       });
-      if (res.ok) setSubmitted(true);
+      if (res.ok) {
+        trackFormSubmission("School Staffing Request");
+        setSubmitted(true);
+      }
     } catch {
       alert("Error submitting. Please call us directly.");
     } finally {
@@ -173,7 +177,10 @@ function TeacherRegForm() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ _subject: "New Teacher Registration (School Staffing)", ...data }),
       });
-      if (res.ok) setSubmitted(true);
+      if (res.ok) {
+        trackFormSubmission("School Staffing Request");
+        setSubmitted(true);
+      }
     } catch {
       alert("Error submitting. Please call us directly.");
     } finally {
@@ -316,8 +323,54 @@ function TeacherRegForm() {
 export default function SchoolStaffingPage() {
   const [activeTab, setActiveTab] = useState<"school" | "teacher">("school");
 
+  const staffingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "School Teacher Staffing & Faculty Supply",
+    "serviceType": "Teacher Recruitment & Guest Faculty Placement",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "C.B. Jha Tutorials",
+      "url": "https://www.cbjhatutorials.in",
+    },
+    "areaServed": "Patna and Bihar",
+    "description": "Supply of verified PRT, TGT, and PGT teachers for schools in Patna and Bihar. Guest faculty, permanent staffing, and 30-day replacement guarantee.",
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.cbjhatutorials.in",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "School Staffing",
+        "item": "https://www.cbjhatutorials.in/school-staffing",
+      },
+    ],
+  };
+
   return (
-    <div className="bg-background min-h-screen pb-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(staffingSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div className="bg-background min-h-screen pb-24">
       {/* Hero */}
       <PageHero
         eyebrow="School Staffing"
@@ -433,5 +486,6 @@ export default function SchoolStaffingPage() {
         </div>
       </Container>
     </div>
+    </>
   );
 }

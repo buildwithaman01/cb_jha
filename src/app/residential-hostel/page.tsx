@@ -54,10 +54,10 @@ function HostelInquiryForm() {
     e.preventDefault();
     const form = e.currentTarget.closest("form");
     if (!form) return;
-    
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
+
     let text = `*New Residential Hostel Inquiry*\n\n`;
     text += `*Student:* ${data.studentName}\n`;
     text += `*Parent:* ${data.parentName}\n`;
@@ -108,7 +108,7 @@ function HostelInquiryForm() {
           <label className="block text-sm font-medium text-foreground mb-1.5">Student&apos;s Class *</label>
           <select name="studentClass" required className="w-full h-11 px-4 border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-secondary transition-all">
             <option value="">Select class</option>
-            {[6,7,8,9,10,11,12].map(c => <option key={c} value={c}>Class {c}</option>)}
+            {[6, 7, 8, 9, 10, 11, 12].map(c => <option key={c} value={c}>Class {c}</option>)}
           </select>
         </div>
         <div>
@@ -178,7 +178,7 @@ function HostelInquiryForm() {
         </button>
         <button type="button" onClick={handleWhatsApp} className="flex-1 h-12 bg-[#25D366] text-white font-heading font-semibold text-sm hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-2">
           <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0z"/>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0z" />
           </svg>
           Send via WhatsApp
         </button>
@@ -188,8 +188,58 @@ function HostelInquiryForm() {
 }
 
 export default function ResidentialHostelPage() {
+  const hostelSchema = {
+    "@context": "https://schema.org",
+    "@type": "Hostel",
+    "name": "C.B. Jha Tutorials Residential Care & Hostel",
+    "url": "https://www.cbjhatutorials.in/residential-hostel",
+    "telephone": "+919470808655",
+    "email": "contact.cbjha@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Near Premlata Kunj Apartment, Mahuabag, Rupaspur",
+      "addressLocality": "Patna",
+      "addressRegion": "Bihar",
+      "postalCode": "801506",
+      "addressCountry": "IN",
+    },
+    "description": "Safe, disciplined residential hostel for outstation students in Patna. 24/7 security, 3 meals daily, dedicated study hall, and warden supervision.",
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.cbjhatutorials.in",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Residential Hostel",
+        "item": "https://www.cbjhatutorials.in/residential-hostel",
+      },
+    ],
+  };
+
   return (
-    <div style={{ backgroundColor: "color-mix(in srgb, #2E7D5B 6%, #FAFAF7)" }} className="min-h-screen pb-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(hostelSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div style={{ backgroundColor: "color-mix(in srgb, #2E7D5B 6%, #FAFAF7)" }} className="min-h-screen pb-24">
       {/* Hero */}
       <PageHero
         eyebrow="Residential &amp; Hostel"
@@ -268,9 +318,16 @@ export default function ResidentialHostelPage() {
             <div className="p-5 border border-[#2E7D5B]/30 bg-[#f5f8f6] flex items-start gap-3">
               <span className="text-lg">📍</span>
               <p className="text-sm text-foreground/70">
-                For live hostel photos, reviews, and directions, visit our dedicated{" "}
-                <span className="font-semibold text-secondary">Google Business Profile</span>
-                {" "}— link will be added once the profile is live.
+                For location, directions, and parent reviews, visit our{" "}
+                <a
+                  href="https://maps.app.goo.gl/Urx124MDJuwNfw3L9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-secondary underline hover:text-secondary/80 transition-colors"
+                >
+                  verified Google Business Profile
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -292,7 +349,7 @@ export default function ResidentialHostelPage() {
               >
                 <div className="w-9 h-9 bg-green-500 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0zm0 21.818a9.84 9.84 0 01-5.018-1.374l-.36-.214-3.728.978.994-3.632-.235-.372A9.797 9.797 0 012.182 12.025c0-5.405 4.398-9.843 9.843-9.843 5.405 0 9.793 4.398 9.793 9.843s-4.428 9.793-9.843 9.793z"/>
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.975 0C5.361 0 0 5.361 0 11.975c0 2.096.546 4.06 1.501 5.768L0 24l6.435-1.688A11.932 11.932 0 0011.975 24C18.589 24 24 18.639 24 12.025 24 5.41 18.589 0 11.975 0zm0 21.818a9.84 9.84 0 01-5.018-1.374l-.36-.214-3.728.978.994-3.632-.235-.372A9.797 9.797 0 012.182 12.025c0-5.405 4.398-9.843 9.843-9.843 5.405 0 9.793 4.398 9.793 9.843s-4.428 9.793-9.843 9.793z" />
                   </svg>
                 </div>
                 <div>
@@ -306,5 +363,6 @@ export default function ResidentialHostelPage() {
         </div>
       </Container>
     </div>
+    </>
   );
 }

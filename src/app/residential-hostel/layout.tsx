@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Residential & Hostel | C.B. Jha Tutorials",
-  description: "A safe, focused, and disciplined residential environment for outstation students preparing for boards and competitive exams.",
+  title: "Student Residential Hostel in Patna | C.B. Jha Tutorials",
+  description: "Safe, disciplined residential student hostel in Patna near Rupaspur. 24/7 security, nutritious meals, dedicated study hours & supervision for outstation students.",
 };
 
 export default function ResidentialHostelLayout({

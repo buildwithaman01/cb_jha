@@ -7,8 +7,8 @@ import { HomeCta } from "@/components/home/home-cta";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "C.B. Jha Tutorials | Academic Coaching, Home Tutors & Hostel in Patna",
-  description: "Expert academic coaching, verified home tutors, residential hostel & school staffing in Patna, Bihar. Class 6–12, all boards. Founded by Chandra Bhusan Jha.",
+  title: "C.B. Jha Tutorials | Academic Coaching & Home Tutors in Patna",
+  description: "Premier academic coaching (Class 6–10) & verified home tuition (Nursery–12) across Patna. Residential hostel & school staffing. Founded by Chandra Bhushan Jha.",
 };
 
 export default function Home() {

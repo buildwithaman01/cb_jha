@@ -5,18 +5,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Academic Coaching Class 6–12 | C.B. Jha Tutorials Patna",
-  description: "Small-batch classroom coaching for CBSE, ICSE, and Bihar State Board. Class 6–12, all subjects. Morning and evening batches. Enroll now.",
+  title: "Academic Coaching Class 6–10 | C.B. Jha Tutorials Patna",
+  description: "Small-batch classroom coaching for CBSE, ICSE, and Bihar State Board. Class 6–10, all subjects. Morning and evening batches. Enroll now.",
 };
 
 const BATCHES = [
   { name: "Morning Batch", time: "6:00 AM – 9:00 AM", classes: "Class 6–10" },
   { name: "Afternoon Batch", time: "12:00 PM – 3:00 PM", classes: "Class 6–8" },
-  { name: "Evening Batch", time: "4:00 PM – 7:30 PM", classes: "Class 9–12" },
+  { name: "Evening Batch", time: "4:00 PM – 7:30 PM", classes: "Class 9–10" },
 ];
 
 const FEATURES = [
-  { title: "Expert Faculty", body: "Subject matter experts with years of board-exam focused teaching experience.", icon: GraduationCap },
+  { title: "Expert Faculty", body: "Subject matter experts with decades of board-exam focused teaching experience.", icon: GraduationCap },
   { title: "Small Batch Size", body: "Max 15–20 students per batch ensuring personal attention and effective learning.", icon: Users },
   { title: "Comprehensive Material", body: "Updated notes, practice sheets, and regular mock tests aligned with the latest syllabus.", icon: BookOpen },
 ];
@@ -28,14 +28,9 @@ const PROGRAMS = [
     subjects: ["Maths Foundation", "Science Exploration", "English Grammar & Writing", "Hindi", "Social Science"],
   },
   {
-    level: "High School — Class 9–10",
+    level: "High School (Board Prep) — Class 9–10",
     desc: "Board exam preparation starts here. Curriculum strictly aligned with the latest CBSE/ICSE/Bihar Board patterns, ensuring students are confident when it counts.",
-    subjects: ["Intensive Maths & Science", "NTSE Preparation", "Regular Mock Tests", "Doubt Clearing Sessions"],
-  },
-  {
-    level: "Senior Secondary — Class 11–12",
-    desc: "Specialized coaching for Science and Commerce streams. Balancing board excellence with competitive exam foundations.",
-    subjects: ["Physics, Chemistry, Maths/Bio", "Accountancy & Economics", "JEE/NEET Foundation", "Career Counseling"],
+    subjects: ["Intensive Maths & Science", "Board Question Bank Drills", "Regular Mock Tests", "Doubt Clearing Sessions"],
   },
 ];
 
@@ -43,14 +38,33 @@ export default function AcademicCoachingPage() {
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Academic Coaching Class 6–12",
+    "name": "Academic Coaching Class 6–10",
     "description": "Comprehensive small-batch classroom coaching for CBSE, ICSE, and Bihar State Board students for all major subjects.",
     "provider": {
       "@type": "EducationalOrganization",
       "name": "C.B. Jha Tutorials",
       "sameAs": "https://www.cbjhatutorials.in",
     },
-    "educationalLevel": "Class 6 to Class 12",
+    "educationalLevel": "Class 6 to Class 10",
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.cbjhatutorials.in",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Academic Coaching",
+        "item": "https://www.cbjhatutorials.in/academic-coaching",
+      },
+    ],
   };
 
   return (
@@ -61,6 +75,12 @@ export default function AcademicCoachingPage() {
           __html: JSON.stringify(courseSchema).replace(/</g, "\\u003c"),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
 
       <div className="bg-background min-h-screen pb-24">
         {/* Hero */}
@@ -68,8 +88,8 @@ export default function AcademicCoachingPage() {
           eyebrow="Academic Coaching"
           headline="Classroom Coaching"
           highlight="That Actually Works."
-          description="Small-batch expert coaching for Class 6–12. CBSE, ICSE, and Bihar State Board. Focused on genuine understanding — not just syllabus completion."
-          tags={["CBSE", "ICSE", "Bihar State Board", "Class 6–12", "Small Batches", "Free Demo"]}
+          description="Small-batch expert coaching for Class 6–10. CBSE, ICSE, and Bihar State Board. Focused on genuine understanding — not just syllabus completion."
+          tags={["CBSE", "ICSE", "Bihar State Board", "Class 6–10", "Small Batches", "Free Demo"]}
           variant="navy"
         />
 
@@ -127,6 +147,17 @@ export default function AcademicCoachingPage() {
                       </ul>
                     </div>
                   ))}
+
+                  {/* Class 11-12 Note */}
+                  <div className="p-6 bg-accent/10 border-l-4 border-accent mt-8">
+                    <h3 className="font-heading text-lg font-bold text-primary mb-1">Looking for Class 11–12 Tuition?</h3>
+                    <p className="text-sm text-foreground/80 leading-relaxed mb-3">
+                      For Senior Secondary students (Science &amp; Commerce streams), we offer dedicated 1-on-1 personalized home tuition and live online sessions with verified subject specialists across Patna.
+                    </p>
+                    <Link href="/home-tuition" className="inline-flex items-center text-sm font-semibold text-primary hover:text-accent transition-colors">
+                      Explore Class 11–12 Home Tuition &rarr;
+                    </Link>
+                  </div>
                 </div>
               </div>
 

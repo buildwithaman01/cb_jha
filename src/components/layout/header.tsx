@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
   { name: "Coaching", href: "/academic-coaching" },
   { name: "Home Tuition", href: "/home-tuition" },
-  { name: "School Staffing", href: "/school-staffing" },
+  { name: "Results", href: "/success-stories" },
+  { name: "Blog", href: "/blog" },
   { name: "Hostel", href: "/residential-hostel" },
   { name: "About", href: "/about" },
-  { name: "FAQ", href: "/faq" },
 ];
 
 export function Header() {

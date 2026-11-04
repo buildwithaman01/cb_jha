@@ -9,8 +9,8 @@ const WHY_US = [
   },
   {
     num: "02",
-    title: "All Subjects, Class 6–12",
-    body: "Maths, Science, English, Hindi, Social Science, Accountancy, Economics — all boards: CBSE, ICSE, and Bihar State Board.",
+    title: "Nursery to Class 12 Coverage",
+    body: "Academic Coaching for Class 6–10 and personalized Home & Online Tuition for Nursery to Class 12 across all boards: CBSE, ICSE, and Bihar State Board.",
   },
   {
     num: "03",
@@ -20,7 +20,7 @@ const WHY_US = [
   {
     num: "04",
     title: "Board Exam Specialists",
-    body: "15+ years of targeted board exam preparation. Our students consistently score in the top percentile across all boards.",
+    body: "Over 40 years of teaching legacy and targeted board preparation. Our students consistently excel across CBSE, ICSE, and BSEB exams.",
   },
 ];
 
@@ -47,7 +47,7 @@ export function WhyUs() {
               <span className="text-accent">We take responsibility.</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed max-w-md">
-              In over 15 years, we have built something rare in the education space — a reputation that parents trust and students return to.
+              With over 40 years of teaching excellence, we have built something rare in the education space — a reputation that parents trust and students return to.
             </p>
             <Link
               href="/about"

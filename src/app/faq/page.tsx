@@ -2,25 +2,33 @@ import { Container } from "@/components/ui/container";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | C.B. Jha Tutorials",
-  description: "Find answers to common questions about our academic coaching, home tuition, school staffing, and hostel facilities.",
+  title: "FAQs — Coaching, Home Tutors & Hostel | C.B. Jha Tutorials",
+  description: "Answers to frequent questions about academic coaching batches, verified home tutors in Patna, fee structures, demo classes, and residential hostel facilities.",
 };
 
 const faqs = [
   {
-    category: "Home Tuition",
+    category: "Home Tuition & Online Classes",
     questions: [
       {
+        q: "Which classes and boards do your home tutors cover in Patna?",
+        a: "We provide home tutors and live online tuition for students from Nursery all the way up to Class 12. We cover CBSE, ICSE, and Bihar State Board (BSEB) across Mathematics, Science (Physics, Chemistry, Biology), Commerce (Accountancy, Economics), English, Hindi, and Social Studies."
+      },
+      {
+        q: "Which localities in Patna do you serve?",
+        a: "We serve all major localities across Patna (40+ areas), including Rupaspur, Dhanaut, Bailey Road, Saguna More, Gola Road, Danapur, Boring Road, Patliputra, Ashiana Nagar, Kankarbagh, Rajendra Nagar, Anisabad, and surrounding neighborhoods."
+      },
+      {
         q: "How are your home tutors verified?",
-        a: "Every tutor undergoes a rigorous 3-step verification process: Document verification (Aadhar/PAN), Subject Knowledge test, and a personal interview to ensure they meet our teaching standards."
+        a: "Every tutor undergoes a rigorous 4-step verification: Aadhaar and ID validation, residential verification, subject competence evaluation, and a direct interview with founder Chandra Bhushan Jha."
       },
       {
         q: "Can I request a trial class before confirming?",
-        a: "Yes, we offer a free demo class with the matched tutor. You only commit if you and your child are completely satisfied with their teaching style."
+        a: "Yes, we provide a free 1-hour demo class with the matched tutor at your home. You only confirm the schedule if you and your child are completely satisfied."
       },
       {
         q: "What if I'm not satisfied with the tutor assigned?",
-        a: "If at any point you are not satisfied, simply let us know. We will arrange a replacement tutor at no extra cost within 48 hours."
+        a: "We provide a 100% tutor replacement guarantee. If the teaching chemistry is not right, simply notify us and we will assign another verified educator within 48 hours."
       }
     ]
   },
@@ -28,6 +36,10 @@ const faqs = [
     category: "Academic Coaching",
     amount: 2,
     questions: [
+      {
+        q: "Which classes are covered in your classroom coaching batches?",
+        a: "Our classroom coaching batches at our Dhanaut/Rupaspur campus are specifically focused on Class 6 to 10 for CBSE, ICSE, and Bihar Board. For Class 11 and 12, we provide specialized 1-on-1 home tutoring and live online guidance."
+      },
       {
         q: "What are the batch sizes at your coaching center?",
         a: "We maintain small batch sizes (typically 15-20 students) to ensure personalized attention and effective doubt-clearing for every student."

@@ -8,10 +8,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const STATS = [
-  { value: "15+", label: "Years Experience" },
-  { value: "2000+", label: "Students Guided" },
-  { value: "50+", label: "Verified Tutors" },
-  { value: "98%", label: "Parent Satisfaction" },
+  { value: "40+", label: "Years Experience" },
+  { value: "5000+", label: "Students Guided" },
+  { value: "200+", label: "Verified Tutors" },
+  { value: "30+", label: "Partner Schools" },
 ];
 
 export function Hero() {
@@ -55,7 +55,7 @@ export function Hero() {
       >
         <Image
           src="/images/hero-bg.jpg"
-          alt=""
+          alt="C.B. Jha Tutorials Patna — Academic Coaching and Home Tuition"
           fill
           priority
           sizes="100vw"
@@ -90,17 +90,17 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="font-heading font-bold text-white leading-[1.12] tracking-tight mb-5 md:mb-8">
-              <span className="hero-line-1 block text-[2.35rem] sm:text-5xl md:text-7xl lg:text-[5rem]">
-                Guiding Students
+              <span className="hero-line-1 block text-[2.1rem] sm:text-5xl md:text-[4.2rem] lg:text-[4.6rem]">
+                Trusted Coaching &amp; Home Tuition
               </span>
-              <span className="hero-line-2 block text-[1.95rem] sm:text-4xl md:text-6xl lg:text-[4rem] text-accent mt-1.5 sm:mt-2 md:mt-3">
-                from Class 6 to 12 and Beyond.
+              <span className="hero-line-2 block text-[1.75rem] sm:text-4xl md:text-[3rem] lg:text-[3.4rem] text-accent mt-1.5 sm:mt-2 md:mt-3">
+                in Patna for Class Nursery–12
               </span>
             </h1>
 
             {/* Services tag line */}
             <p className="hero-sub text-sm sm:text-base md:text-xl text-white/75 font-medium mb-5 leading-relaxed tracking-wide">
-              Academic Coaching &nbsp;·&nbsp; Home Tutors &nbsp;·&nbsp; Residential Care &nbsp;·&nbsp; School Staffing
+              Academic Coaching (6–10) &nbsp;·&nbsp; Home &amp; Online Tuition (Nursery–12) &nbsp;·&nbsp; Residential Care &nbsp;·&nbsp; School Staffing
             </p>
 
             {/* Bold Facility Highlight */}

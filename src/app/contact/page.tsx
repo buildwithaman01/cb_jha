@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Container } from "@/components/ui/container";
 import { Mail, MapPin, Phone, CheckCircle } from "lucide-react";
+import { trackFormSubmission } from "@/lib/analytics";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -27,6 +28,7 @@ export default function ContactPage() {
         }),
       });
       if (res.ok) {
+        trackFormSubmission("General Contact Inquiry");
         setSubmitted(true);
       }
     } catch {
@@ -155,27 +157,42 @@ export default function ContactPage() {
             {/* Google Maps Embed */}
             <div className="mt-8 overflow-hidden border border-border" style={{ aspectRatio: '16/9' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.5!2d85.1376!3d25.5941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCB+Jha+Tutorials!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.413793496747!2d85.06816507485021!3d25.591162715632027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed574f88f3c833%3A0xd8535a8f1fdf0bcf!2sC.B.%20Jha%20Tutorials!5e0!3m2!1sen!2sin!4v1793801021427!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="C.B. Jha Tutorials location map"
               />
             </div>
-            <a
-              href="https://maps.app.goo.gl/DjKVL4ccrKGACSgC6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-3 text-primary text-xs font-medium hover:text-accent transition-colors"
-            >
-              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-              </svg>
-              Open in Google Maps
-            </a>
+            <div className="flex items-center justify-between mt-3">
+              <a
+                href="https://maps.app.goo.gl/Urx124MDJuwNfw3L9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-primary text-xs font-semibold hover:text-accent transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Open in Google Maps
+              </a>
+              <div className="flex flex-wrap items-center gap-2.5 text-xs text-muted-foreground">
+                <a href="https://www.youtube.com/@CBJhaTutorial" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">YouTube</a>
+                <span>·</span>
+                <a href="https://www.instagram.com/cbjhatutorials/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+                <span>·</span>
+                <a href="https://www.facebook.com/cbjhatutorials/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Facebook</a>
+                <span>·</span>
+                <a href="https://www.sulekha.com/c-b-jha-tutorials-dhanaut-patna-contact-address" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Sulekha</a>
+                <span>·</span>
+                <a href="https://jsdl.in/DT-47BCEWISM6T" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">JustDial</a>
+                <span>·</span>
+                <a href="https://www.urbanpro.com/patna/c-b-jha-tutorials/67509575" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">UrbanPro</a>
+              </div>
+            </div>
           </div>
 
           {/* Right — Form */}

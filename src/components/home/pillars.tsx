@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const PILLARS = [
   {
     title: "Academic Coaching",
-    description: "Classroom batches & 1-on-1 mentoring, doubt-clearing sessions, Class 6–12, all subjects.",
+    description: "Classroom batches & 1-on-1 mentoring, doubt-clearing sessions, Class 6–10, all subjects.",
     href: "/academic-coaching",
     icon: BookOpen,
     // square border, thick left rule in Navy Blue, no radius

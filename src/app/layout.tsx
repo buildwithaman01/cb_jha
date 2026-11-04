@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
+import { AnalyticsTracker } from "@/components/providers/analytics-tracker";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MobileBottomBar } from "@/components/layout/mobile-bottom-bar";
@@ -20,8 +21,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cbjhatutorials.in"),
-  title: "C.B. Jha Tutorials | Academic Coaching & Home Tutors in Patna",
-  description: "Guiding Students from Class 6 to 12 — At Home, In Coaching, and Beyond.",
+  title: "C.B. Jha Tutorials | Coaching & Home Tutors in Patna (Nursery–12)",
+  description: "Top-rated academic coaching (Class 6–10) & verified home tutors (Nursery–12) in Patna. CBSE, ICSE, Bihar Board. 40+ years experience. Call now.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
@@ -32,9 +33,17 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+  alternates: {
+    canonical: "https://www.cbjhatutorials.in",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "C.B. Jha Tutorials | Coaching & Home Tutors in Patna",
+    description: "Academic coaching (Class 6–10) & verified home tutors (Nursery–12) across all of Patna. 40+ years experience.",
+  },
   openGraph: {
-    title: "C.B. Jha Tutorials",
-    description: "Guiding Students from Class 6 to 12 — At Home, In Coaching, and Beyond.",
+    title: "C.B. Jha Tutorials | Coaching & Home Tutors in Patna",
+    description: "Academic coaching (Class 6–10) & verified home tutors (Nursery–12) across all of Patna. CBSE, ICSE, Bihar Board. 40+ years experience.",
     url: "https://www.cbjhatutorials.in",
     siteName: "C.B. Jha Tutorials",
     locale: "en_IN",
@@ -55,8 +64,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "email": "contact.cbjha@gmail.com",
         "telephone": "+919470808655",
         "sameAs": [
-          "https://share.google/bENgF7gUJ1k64l4P1",
-          "https://maps.app.goo.gl/DjKVL4ccrKGACSgC6"
+          "https://www.youtube.com/@CBJhaTutorial",
+          "https://www.instagram.com/cbjhatutorials/",
+          "https://www.facebook.com/cbjhatutorials/",
+          "https://www.sulekha.com/c-b-jha-tutorials-dhanaut-patna-contact-address",
+          "https://www.urbanpro.com/patna/c-b-jha-tutorials/67509575",
+          "https://jsdl.in/DT-47BCEWISM6T",
+          "https://maps.app.goo.gl/Urx124MDJuwNfw3L9",
+          "https://share.google/bENgF7gUJ1k64l4P1"
         ]
       },
       {
@@ -82,7 +97,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "latitude": "25.5941",
           "longitude": "85.1376"
         },
-        "hasMap": "https://maps.app.goo.gl/DjKVL4ccrKGACSgC6"
+        "hasMap": "https://maps.app.goo.gl/Urx124MDJuwNfw3L9",
+        "sameAs": [
+          "https://www.youtube.com/@CBJhaTutorial",
+          "https://www.instagram.com/cbjhatutorials/",
+          "https://www.facebook.com/cbjhatutorials/",
+          "https://www.sulekha.com/c-b-jha-tutorials-dhanaut-patna-contact-address",
+          "https://www.urbanpro.com/patna/c-b-jha-tutorials/67509575",
+          "https://jsdl.in/DT-47BCEWISM6T"
+        ]
       }
     ]
   };
@@ -114,6 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
         />
         <SmoothScrollProvider>
+          <AnalyticsTracker />
           <Header />
           <main className="flex-1 pb-[58px] lg:pb-0">{children}</main>
           <Footer />

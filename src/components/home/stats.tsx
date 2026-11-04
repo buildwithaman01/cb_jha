@@ -5,10 +5,10 @@ import { Container } from "@/components/ui/container";
 import { useInView } from "framer-motion";
 
 const STATS = [
-  { value: 15, suffix: "+", label: "Years of Excellence" },
-  { value: 10000, suffix: "+", label: "Students Guided" },
-  { value: 50, suffix: "+", label: "Partner Schools" },
-  { value: 100, suffix: "%", label: "Dedication" },
+  { value: 40, suffix: "+", label: "Years of Excellence" },
+  { value: 5000, suffix: "+", label: "Students Guided" },
+  { value: 200, suffix: "+", label: "Verified Tutors" },
+  { value: 30, suffix: "+", label: "Partner Schools" },
 ];
 
 function Counter({ 
