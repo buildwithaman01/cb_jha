@@ -113,8 +113,9 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Call / WhatsApp</h3>
                   <p className="text-muted-foreground text-sm">
-                    <a href="tel:+919470808655" className="hover:text-accent transition-colors">+91 94708 08655</a><br />
-                    Mon – Sat, 9:00 AM to 7:00 PM
+                    <a href="tel:+919470808655" className="hover:text-accent transition-colors font-medium text-foreground">+91 94708 08655</a><br />
+                    Mon – Sat: 7:00 AM – 9:00 PM<br />
+                    Sunday: 8:00 AM – 9:00 PM
                   </p>
                 </div>
               </div>

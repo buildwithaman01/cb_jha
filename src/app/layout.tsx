@@ -98,6 +98,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "longitude": "85.1376"
         },
         "hasMap": "https://maps.app.goo.gl/Urx124MDJuwNfw3L9",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "07:00",
+            "closes": "21:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "08:00",
+            "closes": "21:00"
+          }
+        ],
         "sameAs": [
           "https://www.youtube.com/@CBJhaTutorial",
           "https://www.instagram.com/cbjhatutorials/",
